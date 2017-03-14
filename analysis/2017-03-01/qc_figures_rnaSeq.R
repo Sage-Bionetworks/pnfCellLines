@@ -69,7 +69,7 @@ pdf('boxPlotOfCountMin2_gencode.pdf')
 print(p)
 dev.off() 
 
-#### upload filesw
+#### upload files
 rnaqc <- 'syn8360472'
 scripturl <- 'https://raw.githubusercontent.com/sgosline/pnfCellLines/master/analysis/2017-03-01/qc_figures_rnaSeq.R'
 

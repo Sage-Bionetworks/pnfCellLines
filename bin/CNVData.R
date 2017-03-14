@@ -54,14 +54,14 @@ tier0_rawData<-function(annot=NA){
                                         #collect sample files and process them into data frame
     sample.data<-lapply(snpfiles$entity.id,function(synid){
         fname=synGet(synid)
-        print(paste("Getting sample",snpfiles$entity.sampleID[match(synid,snpfiles$entity.id)]))
+        print(paste("Getting sample",snpfiles$entity.sampleIdentifier[match(synid,snpfiles$entity.id)]))
         data <- as.data.frame(fread(fname@filePath,sep=",",header=T))
         ad<-data[match(annot$Name,data$'SNP Name'),]
         return(ad)
     })
 
                                         #update sample names
-    names(sample.data) <- snpfiles$entity.sampleID
+    names(sample.data) <- snpfiles$entity.sampleIdentifier
 
     return(sample.data)
 }
